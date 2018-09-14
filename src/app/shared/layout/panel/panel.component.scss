@@ -1,0 +1,30 @@
+.panel-wrapper {
+  border: 1px solid rgba(0, 0, 0, .03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+}
+
+.panel-content {
+  padding: 20px 0px;
+}
+
+.panel-header {
+  padding: 8px 20px;
+  vertical-align: center;
+  color: rgba(0, 0, 0, .54);
+  overflow: hidden;
+  background: rgba(0, 0, 0, .03);
+
+  .panel-title {
+    float: left;
+  }
+
+  .panel-actions {
+    float: right;
+  }
+}
+
+.panel-footer {
+  padding: 8px 20px;
+  color: rgba(0, 0, 0, .54);
+  font-size: 12px;
+}

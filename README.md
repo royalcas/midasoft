@@ -1,27 +1,30 @@
 # Midasoft
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+Este proyecto fue creado con [Angular CLI](https://github.com/angular/angular-cli) versión 6.2.1.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecutar `ng serve` para el servidor de desarrollo. Navega a `http://localhost:4200/`. La aplicación se actualizará en el navegador con cualquier cambio en el código fuente.
 
-## Code scaffolding
+## Generación automática de código
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecutar `ng generate component component-name` para generar un nuevo componente.
+
+Este proyecto está basado en módulos generales de la aplicación por lo cual se utilizará el comando de generación de componentes mediante el siguiente comando:
+`ng generate component [NombreModulo]/componentName`.
+
+También puede utilizar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Ejecutar `ng build` para compilar el proyecto. Los artefactos de compilación se generarán dentro de la carpeta `dist/`, dichos artefactos podrán ser utilizados para la publicación en servidor. Para compilar una versión de producción se debe ejecutar `ng build --aot --prod`.
 
-## Running unit tests
+## Librerías Utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Material
+- Bootstrap
+- [Font Awesome](https://fontawesome.com/how-to-use/on-the-web/using-with/angular)
 
-## Running end-to-end tests
+## Más Ayuda
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Para obtener más información acerca de Angular CLI ejecuta `ng help` o revisa la documentación oficial en [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

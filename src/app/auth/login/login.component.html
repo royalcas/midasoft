@@ -1,0 +1,20 @@
+<app-page-layout>
+  <h1>This is Login</h1>
+  <button mat-raised-button color="primary">This is my button</button><br>
+
+  <app-panel>
+    <app-panel-header>
+      <h3>This is my panel</h3>
+    </app-panel-header>
+    <app-panel-actions>
+      <button mat-button (click)="alert('example action')">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+
+      </button>
+    </app-panel-actions>
+    <app-panel-content>
+      <p>Panel contents</p>
+    </app-panel-content>
+    <app-panel-footer>Footer!</app-panel-footer>
+  </app-panel>
+</app-page-layout>

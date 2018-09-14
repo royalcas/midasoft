@@ -1,0 +1,26 @@
+<div class="panel-wrapper">
+  <div class="panel-header">
+    <div class="panel-title">
+      <ng-content select="app-panel-header"></ng-content>
+    </div>
+    <div class="panel-actions">
+      <ng-content select="app-panel-actions"></ng-content>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-content">
+    <div class="col">
+      <ng-content select="app-panel-content"></ng-content>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-footer">
+    <div class="panel-footer col-sm">
+      <ng-content select="app-panel-footer"></ng-content>
+    </div>
+    <div class="panel-conventions col-sm">
+    </div>
+  </div>
+
+</div>

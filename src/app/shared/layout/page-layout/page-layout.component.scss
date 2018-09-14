@@ -1,0 +1,25 @@
+.navbar-header {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
+  top: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.main-container {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  bottom: 0;
+  margin-bottom: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
