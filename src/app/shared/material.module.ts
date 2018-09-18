@@ -1,7 +1,29 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatAutocompleteModule,
+  MatCheckboxModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatTableModule
+} from '@angular/material';
 
-const MatModules = [MatButtonModule, MatCardModule];
+const MatModules = [
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatAutocompleteModule,
+  MatCheckboxModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatTableModule
+];
 
 @NgModule({
   imports: MatModules,

@@ -5,12 +5,12 @@
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 50;
 }
 
-.main-container {
-  padding-top: 200px;
-  padding-bottom: 200px;
+main {
+  padding-top: 100px;
+  padding-bottom: 115px;
 }
 
 .footer {
@@ -21,5 +21,18 @@
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 50;
+}
+
+
+.navbar-nav {
+  >li {
+    margin: 0 10px;
+  }
+
+  .module-name {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    font-weight: bold;
+  }
 }

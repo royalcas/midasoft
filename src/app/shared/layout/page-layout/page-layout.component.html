@@ -1,7 +1,45 @@
 <header class="navbar-header">
-  <app-company-logo></app-company-logo>
-  <app-main-menu></app-main-menu>
-  <app-user-info></app-user-info>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <app-company-logo></app-company-logo>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item module-name">
+          {{moduleName}}
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <div class="nav-box">
+              <label for="usernameNav">Usuario:</label><br>
+              <b id="usernameNav">TMENDEZ</b>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <div class="nav-box">
+              <label for="usernameNav">Compañía:</label><br>
+              <b id="usernameNav">COMERCIA</b>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <div class="nav-box">
+              <label for="usernameNav">Emp. Elegido:</label><br>
+              <b id="usernameNav">E003 - TITO MENDEZ</b>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
 </header>
 <main class="container-fluid main-container">
   <ng-content></ng-content>

@@ -1,3 +1,7 @@
+import { BootstrapModule } from './../ngb.module';
+import { ColorConventionsComponent } from './panel/color-conventions/color-conventions.component';
+import { ConventionsModalComponent } from './panel/color-conventions/conventions-modal/conventions-modal.component';
+import { EmptyLayoutComponent } from './empty-layout/empty-layout.component';
 import { PanelActionsComponent } from './panel/panel-actions/panel-actions.component';
 import { PanelContentComponent } from './panel/panel-content/panel-content.component';
 import { PanelHeaderComponent } from './panel/panel-header/panel-header.component';
@@ -10,6 +14,8 @@ import { FooterComponent } from './footer/footer.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { PanelComponent } from './panel/panel.component';
 import { PanelFooterComponent } from './panel/panel-footer/panel-footer.component';
+import { MaterialModule } from '../material.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const components = [
   PageLayoutComponent,
@@ -21,12 +27,16 @@ const components = [
   PanelHeaderComponent,
   PanelContentComponent,
   PanelActionsComponent,
-  PanelFooterComponent
+  PanelFooterComponent,
+  EmptyLayoutComponent,
+  ConventionsModalComponent,
+  ColorConventionsComponent
 ];
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, MaterialModule, BootstrapModule, FontAwesomeModule],
   declarations: components,
-  exports: components
+  exports: components,
+  entryComponents: [ConventionsModalComponent]
 })
 export class LayoutModule {}

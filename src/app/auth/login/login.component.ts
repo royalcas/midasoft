@@ -8,6 +8,13 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class LoginComponent implements OnInit {
   faCoffee = faPlus;
+  companias = [
+    {
+      code: 'CM',
+      name: 'CM-COMERCIAL'
+    }
+  ];
+
   constructor() {}
 
   ngOnInit() {}

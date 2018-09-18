@@ -1,4 +1,42 @@
-<app-page-layout>
+<app-empty-layout>
+  <div class="login-container">
+    <div class="row align-items-center">
+      <div class="offset-md-3 col-sm-6 col-md-3 company-img-container">
+        <img src="./assets/logo_cia.png" class="img-fluid" width="300" alt="Praxedes">
+      </div>
+      <div class="col-sm-6 col-md-3 login-form">
+        <h1>Login</h1>
+        <div class="form-control">
+
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Compañía">
+              <mat-option *ngFor="let compania of companias" [value]="compania.code">
+                {{compania.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form-control">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Usuario">
+          </mat-form-field>
+        </div>
+        <div class="form-control">
+          <mat-form-field class="full-width">
+            <input type="password" matInput placeholder="Contraseña">
+          </mat-form-field>
+        </div>
+        <div class="forgot-password">
+          <a mat-button>¿Ha olvidado su contraseña?</a>
+        </div>
+        <div class="actions">
+          <button mat-raised-button color="primary">INGRESAR</button>
+          <button mat-raised-button color="accent">REGISTRARSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <h1>This is Login</h1>
   <button mat-raised-button color="primary">This is my button</button><br>
 
@@ -17,4 +55,4 @@
     </app-panel-content>
     <app-panel-footer>Footer!</app-panel-footer>
   </app-panel>
-</app-page-layout>
+</app-empty-layout>
