@@ -22,7 +22,7 @@ export class MidaHttpService {
       switchMap(securedOptions =>
         this.httpClient.get<T>(this.getEndpointUrl(url), securedOptions as any)
       ),
-      map((httpEvent: HttpResponse<T>) => httpEvent.body)
+      map((httpEvent: any) => httpEvent)
     );
   }
 
@@ -35,7 +35,7 @@ export class MidaHttpService {
           securedOptions as any
         )
       ),
-      map((httpEvent: HttpResponse<T>) => httpEvent.body)
+      map((httpEvent: any) => httpEvent)
     );
   }
 
@@ -48,7 +48,7 @@ export class MidaHttpService {
           securedOptions as any
         )
       ),
-      map((httpEvent: HttpResponse<T>) => httpEvent.body)
+      map((httpEvent: any) => httpEvent)
     );
   }
 
@@ -60,7 +60,7 @@ export class MidaHttpService {
           securedOptions as any
         )
       ),
-      map((httpEvent: HttpResponse<T>) => httpEvent.body)
+      map((httpEvent: any) => httpEvent)
     );
   }
 

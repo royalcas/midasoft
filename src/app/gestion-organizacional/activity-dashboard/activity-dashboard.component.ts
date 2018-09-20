@@ -1,7 +1,9 @@
+import { ActividadService } from './../../core/services/organizacional/actividad.service';
 import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
-import { actividades } from './activity-data';
+import { Observable } from 'rxjs';
+import { Actividad } from '../../core/models/organizacional/actividad.model';
 
 @Component({
   selector: 'app-activity-dashboard',
@@ -11,16 +13,33 @@ import { actividades } from './activity-data';
 export class ActivityDashboardComponent implements OnInit {
   faPlusIcon = faPlus;
   displayedColumns: string[] = [
-    'id',
-    'codigoEmpleado',
-    'fechaProgramada',
-    'centroCosto'
+    'Id',
+    'CodigoEmpleado',
+    'FechaProgramada',
+    // 'CentroCosto',
+    // 'TipoMovimiento',
+    'UsuarioAutoriza',
+    'UsuarioRegistro',
+    // 'TipoRegistro',
+    // 'Horario',
+    'Directorio',
+    // 'FechaMarcacion',
+    // 'Novedad',
+    // 'Observacion',
+    'Dispositivo'
+    // 'Compania',
+    // 'Contrato'
   ];
-  actividades = actividades;
+  actividades$: Observable<Actividad[]>;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private actividadService: ActividadService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.actividades$ = this.actividadService.getAll();
+  }
 
   add() {
     this.router.navigate(['/organizacional/crear']);

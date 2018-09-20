@@ -1,5 +1,5 @@
-export class UserLogin {
-  public companyCode: string;
-  public username: string;
-  public password: string;
+export interface IUserLogin {
+  companyCode: string;
+  username: string;
+  password: string;
 }

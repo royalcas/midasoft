@@ -28,7 +28,7 @@ export class MidaHttpOptionsService {
 
         options.headers = options.headers ? options.headers : new HttpHeaders();
         options.headers = options.headers.append(
-          'Authentication',
+          'Authorization',
           `Bearer ${jwtToken}`
         );
 

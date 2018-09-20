@@ -6,53 +6,50 @@
       </div>
       <div class="col-sm-6 col-md-3 login-form">
         <h1>Login</h1>
-        <div class="form-control">
+        <mat-error *ngIf="wrongCredentials">
+          Por favor verifique el nombre de usuario y la contraseña
+        </mat-error>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-control">
 
-          <mat-form-field class="full-width">
-            <mat-select placeholder="Compañía">
-              <mat-option *ngFor="let compania of companias" [value]="compania.code">
-                {{compania.name}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Compañía" formControlName="companyId">
+                <mat-option *ngFor="let compania of companias" [value]="compania.code">
+                  {{compania.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="loginForm.get('companyId').invalid">
+                Por favor seleccione una compañía
+              </mat-error>
+            </mat-form-field>
+          </div>
 
-        <div class="form-control">
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Usuario">
-          </mat-form-field>
-        </div>
-        <div class="form-control">
-          <mat-form-field class="full-width">
-            <input type="password" matInput placeholder="Contraseña">
-          </mat-form-field>
-        </div>
-        <div class="forgot-password">
-          <a mat-button>¿Ha olvidado su contraseña?</a>
-        </div>
-        <div class="actions">
-          <button mat-raised-button color="primary">INGRESAR</button>
-          <button mat-raised-button color="accent">REGISTRARSE</button>
-        </div>
+          <div class="form-control">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Usuario" formControlName="username" required>
+              <mat-error *ngIf="loginForm.get('username').invalid">
+                Usuario es requerido
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-control">
+            <mat-form-field class="full-width">
+              <input type="password" matInput placeholder="Contraseña" formControlName="password" required>
+              <mat-error *ngIf="loginForm.get('password').invalid">
+                La contraseña es requerida
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="forgot-password">
+            <a mat-button>¿Ha olvidado su contraseña?</a>
+          </div>
+          <div class="actions">
+            <button mat-raised-button color="primary">INGRESAR</button>
+            <button mat-raised-button color="accent">REGISTRARSE</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-  <h1>This is Login</h1>
-  <button mat-raised-button color="primary">This is my button</button><br>
 
-  <app-panel>
-    <app-panel-header>
-      <h3>This is my panel</h3>
-    </app-panel-header>
-    <app-panel-actions>
-      <button mat-button (click)="alert('example action')">
-        <fa-icon [icon]="faCoffee"></fa-icon>
-
-      </button>
-    </app-panel-actions>
-    <app-panel-content>
-      <p>Panel contents</p>
-    </app-panel-content>
-    <app-panel-footer>Footer!</app-panel-footer>
-  </app-panel>
 </app-empty-layout>

@@ -9,7 +9,11 @@ import {
   MatCheckboxModule,
   MatTooltipModule,
   MatDialogModule,
-  MatTableModule
+  MatTableModule,
+  MatSnackBarModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 
 const MatModules = [
@@ -22,7 +26,11 @@ const MatModules = [
   MatCheckboxModule,
   MatTooltipModule,
   MatDialogModule,
-  MatTableModule
+  MatTableModule,
+  MatSnackBarModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({

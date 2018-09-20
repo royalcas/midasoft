@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { GestionOrganizacionalComponent } from './gestion-organizacional/gestion-organizacional.component';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,9 +12,14 @@ import { SharedModule } from './shared/shared.module';
 import { InternalLayoutOutletComponent } from './internal-layout-outlet/internal-layout-outlet.component';
 
 @NgModule({
-  declarations: [AppComponent, GestionOrganizacionalComponent, InternalLayoutOutletComponent],
+  declarations: [
+    AppComponent,
+    GestionOrganizacionalComponent,
+    InternalLayoutOutletComponent
+  ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
     FormsModule,

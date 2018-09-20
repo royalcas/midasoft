@@ -1,5 +1,5 @@
 <h1>Gestión de actividades</h1>
-<app-panel>
+<app-panel *ngIf="actividades$ | async as actividades; else loadingTemplate">
   <app-panel-header>
     Actividades
   </app-panel-header>
@@ -10,33 +10,87 @@
     </button>
   </app-panel-actions>
   <app-panel-content>
-    <table mat-table [dataSource]="actividades" class="mat-elevation-z8">
+    <table mat-table [dataSource]="actividades" class="mat-elevation-z2">
 
-      <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="id">
+      <ng-container matColumnDef="Id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
       </ng-container>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="codigoEmpleado">
+      <ng-container matColumnDef="CodigoEmpleado">
         <th mat-header-cell *matHeaderCellDef> COD. EMPLEADO </th>
-        <td mat-cell *matCellDef="let element"> {{element.codigoEmpleado}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.CodigoEmpleado}} </td>
       </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="fechaProgramada">
+      <ng-container matColumnDef="FechaProgramada">
         <th mat-header-cell *matHeaderCellDef> FECHA PROGRAMADA </th>
-        <td mat-cell *matCellDef="let element"> {{element.fechaProgramada | longDate}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.FechaProgramada | longDate}} </td>
       </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="centroCosto">
+      <ng-container matColumnDef="CentroCosto">
         <th mat-header-cell *matHeaderCellDef> CENTRO COSTO </th>
-        <td mat-cell *matCellDef="let element"> {{element.centroCosto}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.CentroCosto}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="UsuarioAutoriza">
+        <th mat-header-cell *matHeaderCellDef> USUARIO AUTORIZADOR </th>
+        <td mat-cell *matCellDef="let element"> {{element.UsuarioAutoriza}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="UsuarioRegistro">
+        <th mat-header-cell *matHeaderCellDef> USUARIO REGISTRO </th>
+        <td mat-cell *matCellDef="let element"> {{element.UsuarioRegistro}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="TipoMovimiento">
+        <th mat-header-cell *matHeaderCellDef> TIPO MOVIMIENTO </th>
+        <td mat-cell *matCellDef="let element"> {{element.TipoMovimiento}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="TipoRegistro">
+        <th mat-header-cell *matHeaderCellDef> TIPO REGISTRO </th>
+        <td mat-cell *matCellDef="let element"> {{element.TipoRegistro}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Horario">
+        <th mat-header-cell *matHeaderCellDef> HORARIO </th>
+        <td mat-cell *matCellDef="let element"> {{element.Horario}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Directorio">
+        <th mat-header-cell *matHeaderCellDef> DIRECTORIO </th>
+        <td mat-cell *matCellDef="let element"> {{element.Directorio}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="FechaMarcacion">
+        <th mat-header-cell *matHeaderCellDef> FECHA MARCACIÓN </th>
+        <td mat-cell *matCellDef="let element"> {{element.FechaMarcacion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Novedad">
+        <th mat-header-cell *matHeaderCellDef> FECHA NOVEDAD </th>
+        <td mat-cell *matCellDef="let element"> {{element.Novedad}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Observacion">
+        <th mat-header-cell *matHeaderCellDef> OBSERVACIÓN </th>
+        <td mat-cell *matCellDef="let element"> {{element.Observacion}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Dispositivo">
+        <th mat-header-cell *matHeaderCellDef> DISPOSITIVO </th>
+        <td mat-cell *matCellDef="let element"> {{element.Dispositivo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Compania">
+        <th mat-header-cell *matHeaderCellDef> COMPAÑÍA </th>
+        <td mat-cell *matCellDef="let element"> {{element.Compania}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Contrato">
+        <th mat-header-cell *matHeaderCellDef> CONTRATO </th>
+        <td mat-cell *matCellDef="let element"> {{element.Contrato}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -46,7 +100,11 @@
 
   </app-panel-content>
 
+  <app-panel-footer>Número de registros: {{actividades?.length}}</app-panel-footer>
   <app-color-conventions [conventions]="[{ color: 'red', description: 'Rechazado'}]">
-
   </app-color-conventions>
 </app-panel>
+
+<ng-template #loadingTemplate>
+  <app-loading></app-loading>
+</ng-template>

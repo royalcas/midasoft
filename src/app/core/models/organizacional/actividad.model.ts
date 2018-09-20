@@ -1,18 +1,18 @@
 export interface Actividad {
-  id: number;
-  codigoEmpleado: string;
-  fechaProgramada: Date;
-  centroCosto: string;
-  tipoMovimiento: string;
-  usuarioAutoriza: string;
-  usuarioRegistro: string;
-  tipoRegistro: string;
-  horario: string;
-  directorio: string;
-  fechaMarcacion: Date;
-  novedad: string;
-  observacion: string;
-  dispositivo: string;
-  compania: string;
-  contrato: string;
+  Id: number;
+  CodigoEmpleado: string;
+  FechaProgramada: Date;
+  CentroCosto: string;
+  TipoMovimiento: string;
+  UsuarioAutoriza: string;
+  UsuarioRegistro: string;
+  TipoRegistro: string;
+  Horario: string;
+  Directorio: string;
+  FechaMarcacion: Date;
+  Novedad: string;
+  Observacion: string;
+  Dispositivo: string;
+  Compania: string;
+  Contrato: string;
 }

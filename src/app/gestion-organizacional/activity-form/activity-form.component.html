@@ -1,3 +1,34 @@
-<p>
-  activity-form works!
-</p>
+<form [formGroup]="manHourForm" (ngSubmit)="save()">
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Empleado" formControlName="Empleado" required>
+        <mat-error *ngIf="manHourForm.get('Empleado').invalid">
+          El empleado es requerido
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Fecha Marcación" [max]="today" [matDatepicker]="picker" formControlName="FechaMarcacion"
+          required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="manHourForm.get('FechaMarcacion').invalid">
+          La fecha de marcación es requerida
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Dispositivo" formControlName="Dispositivo" required>
+        <mat-error *ngIf="manHourForm.get('Dispositivo').invalid">
+          El dispositivo es requerido
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-raised-button color="primary">AGREGAR</button>
+  </div>
+</form>

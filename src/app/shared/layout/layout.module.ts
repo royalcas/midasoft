@@ -18,6 +18,7 @@ import { PanelFooterComponent } from './panel/panel-footer/panel-footer.componen
 import { MaterialModule } from '../material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SubmoduleLayoutComponent } from './submodule-layout/submodule-layout.component';
+import { RouterModule } from '@angular/router';
 
 const components = [
   PageLayoutComponent,
@@ -38,7 +39,13 @@ const components = [
 ];
 
 @NgModule({
-  imports: [CommonModule, MaterialModule, BootstrapModule, FontAwesomeModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    BootstrapModule,
+    FontAwesomeModule,
+    RouterModule
+  ],
   declarations: components,
   exports: components,
   entryComponents: [ConventionsModalComponent]

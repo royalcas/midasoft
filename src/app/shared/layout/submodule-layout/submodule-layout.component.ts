@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { Observable, of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-submodule-layout',
@@ -24,11 +24,11 @@ export class SubmoduleLayoutComponent implements OnInit {
   ngOnInit() {
     this.route.url
       .pipe(
-        mergeMap(segments => {
+        switchMap(segments => {
           if (!segments || segments.length === 0) {
             return of('');
           }
-          this.mapUrlSegmentToModuleName(segments[0].path);
+          return this.mapUrlSegmentToModuleName(segments[0].path);
         })
       )
       .subscribe(moduleName => {
