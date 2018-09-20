@@ -19,9 +19,8 @@ import { ActivityFormComponent } from './activity-form/activity-form.component';
   declarations: [
     ActivityDashboardComponent,
     CreateActivityComponent,
-    ActivityFormComponent,
-    GestionOrganizacionalComponent
+    ActivityFormComponent
   ],
-  exports: [GestionOrganizacionalComponent]
+  exports: []
 })
 export class GestionOrganizacionalModule {}

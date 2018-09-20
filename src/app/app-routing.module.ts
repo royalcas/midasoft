@@ -1,9 +1,11 @@
+import { SubmoduleLayoutComponent } from './shared/layout/submodule-layout/submodule-layout.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { PageNotFoundComponent } from './shared/error/page-not-found/page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './auth/login/login.component';
 import { GestionOrganizacionalModule } from './gestion-organizacional/gestion-organizacional.module';
+import { InternalLayoutOutletComponent } from './internal-layout-outlet/internal-layout-outlet.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -11,7 +13,8 @@ const appRoutes: Routes = [
   { path: 'logout', component: LogoutComponent },
   {
     path: 'organizacional',
-    loadChildren: () => GestionOrganizacionalModule
+    loadChildren: () => GestionOrganizacionalModule,
+    component: InternalLayoutOutletComponent
   },
   { path: '**', component: PageNotFoundComponent }
 ];

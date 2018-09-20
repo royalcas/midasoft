@@ -1,3 +1,4 @@
+import { CurrentTimeComponent } from './current-time/current-time.component';
 import { BootstrapModule } from './../ngb.module';
 import { ColorConventionsComponent } from './panel/color-conventions/color-conventions.component';
 import { ConventionsModalComponent } from './panel/color-conventions/conventions-modal/conventions-modal.component';
@@ -16,6 +17,7 @@ import { PanelComponent } from './panel/panel.component';
 import { PanelFooterComponent } from './panel/panel-footer/panel-footer.component';
 import { MaterialModule } from '../material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SubmoduleLayoutComponent } from './submodule-layout/submodule-layout.component';
 
 const components = [
   PageLayoutComponent,
@@ -30,7 +32,9 @@ const components = [
   PanelFooterComponent,
   EmptyLayoutComponent,
   ConventionsModalComponent,
-  ColorConventionsComponent
+  ColorConventionsComponent,
+  SubmoduleLayoutComponent,
+  CurrentTimeComponent
 ];
 
 @NgModule({
