@@ -1,5 +1,5 @@
 <h1>Gestión de actividades</h1>
-<app-panel *ngIf="actividades$ | async as actividades; else loadingTemplate">
+<app-panel *ngIf="actividades?.length; else loadingTemplate">
   <app-panel-header>
     Actividades
   </app-panel-header>
@@ -10,7 +10,12 @@
     </button>
   </app-panel-actions>
   <app-panel-content>
-    <table mat-table [dataSource]="actividades" class="mat-elevation-z2">
+    <mat-form-field>
+      <input (keyup)="onFiltrarActividades($event.target.value)" matInput name="filter" id="filterField" placeholder="Filtrar">
+    </mat-form-field>
+
+
+    <table mat-table [dataSource]="actividadesMostradas" class="mat-elevation-z2">
 
       <ng-container matColumnDef="Id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -100,7 +105,7 @@
 
   </app-panel-content>
 
-  <app-panel-footer>Número de registros: {{actividades?.length}}</app-panel-footer>
+  <app-panel-footer>Número de registros: {{actividadesMostradas?.length}} de {{actividades?.length}}</app-panel-footer>
   <app-color-conventions [conventions]="[{ color: 'red', description: 'Rechazado'}]">
   </app-color-conventions>
 </app-panel>

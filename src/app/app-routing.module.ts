@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { LoginComponent } from './auth/login/login.component';
 import { GestionOrganizacionalModule } from './gestion-organizacional/gestion-organizacional.module';
 import { InternalLayoutOutletComponent } from './internal-layout-outlet/internal-layout-outlet.component';
+import { NominaModule } from './nomina/nomina.module';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,6 +15,11 @@ const appRoutes: Routes = [
   {
     path: 'organizacional',
     loadChildren: () => GestionOrganizacionalModule,
+    component: InternalLayoutOutletComponent
+  },
+  {
+    path: 'nomina',
+    loadChildren: () => NominaModule,
     component: InternalLayoutOutletComponent
   },
   { path: '**', component: PageNotFoundComponent }

@@ -1,0 +1,122 @@
+<form [formGroup]="generalForm" (ngSubmit)="save()">
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <input matInput placeholder="Optional Field" formControlName="optionalField">
+        <mat-error *ngIf="generalForm.get('optionalField').invalid">
+          Error en campo opcional
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <input matInput placeholder="Con Valor Inicial" formControlName="initialValue">
+        <mat-error *ngIf="generalForm.get('initialValue').invalid">
+          Error en campo con valor inicial
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <input matInput placeholder="Requerido" formControlName="requiredField" required>
+        <mat-error *ngIf="generalForm.get('requiredField').invalid">
+          Error en campo requerido
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="emailField">
+        <mat-error *ngIf="generalForm.get('emailField').touched && generalForm.get('emailField').invalid">
+          Error en campo requerido
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <input matInput placeholder="Telefono" formControlName="patternField">
+        <mat-error *ngIf="generalForm.get('patternField').invalid">
+          Error en campo con formato telefono
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <input matInput placeholder="Rango" formControlName="rangeField">
+        <mat-error *ngIf="generalForm.get('rangeField').invalid">
+          Error en campo con rango
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col" formGroupName="direccion">
+      <h2>Dirección</h2>
+      <mat-error *ngIf="generalForm.get('direccion').invalid">
+        Errores con la dirección
+      </mat-error>
+      <mat-form-field>
+        <input matInput placeholder="Calle" formControlName="calle">
+        <mat-error *ngIf="generalForm.get('direccion').get('calle').invalid">
+          Error en campo con Calle
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Numero" formControlName="numero">
+        <mat-error *ngIf="generalForm.get('direccion').get('numero').invalid">
+          Error en campo con Numero Apto
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Ciudad" formControlName="ciudad">
+        <mat-error *ngIf="generalForm.get('direccion').get('ciudad').invalid">
+          Error en campo con Ciudad
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Departamento" formControlName="departamento">
+        <mat-error *ngIf="generalForm.get('direccion').get('departamento').invalid">
+          Error en campo con Departamento
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div formArrayName="skills">
+        <div *ngFor="let skill of generalForm.get('skills').controls; index as i">
+          <span>Skill {{i + 1}}</span>
+          <div [formGroupName]="i">
+            <mat-form-field>
+              <input matInput placeholder="Nombre" formControlName="name">
+
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Valor" formControlName="value">
+
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-raised-button color="primary">SEND</button>
+  </div>
+  <div>
+    {{generalForm.value | json}}
+    <br>
+    {{generalForm.status}}
+  </div>
+</form>

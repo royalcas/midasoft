@@ -2,9 +2,10 @@ import { MidaHttpOptionsService } from './mida-http-options.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpResponse } from '@angular/common/http';
 import { HttpOptions } from './http-options.model';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class MidaHttpService {
 
   constructor(
     private httpClient: HttpClient,
+    private router: Router,
     private httpOptionsService: MidaHttpOptionsService
   ) {}
 
@@ -22,8 +24,17 @@ export class MidaHttpService {
       switchMap(securedOptions =>
         this.httpClient.get<T>(this.getEndpointUrl(url), securedOptions as any)
       ),
-      map((httpEvent: any) => httpEvent)
+      map((httpEvent: any) => httpEvent),
+      catchError(this.handleError)
     );
+  }
+
+  private handleError(error) {
+    if (error.statusCode === 401 || error.statusCode === 404) {
+      //
+      this.router.navigate(['/login']);
+    }
+    return Observable.throw(error);
   }
 
   post<T>(url: string, body, options?: HttpOptions): Observable<T> {
@@ -35,7 +46,8 @@ export class MidaHttpService {
           securedOptions as any
         )
       ),
-      map((httpEvent: any) => httpEvent)
+      map((httpEvent: any) => httpEvent),
+      catchError(this.handleError)
     );
   }
 
@@ -48,7 +60,8 @@ export class MidaHttpService {
           securedOptions as any
         )
       ),
-      map((httpEvent: any) => httpEvent)
+      map((httpEvent: any) => httpEvent),
+      catchError(this.handleError)
     );
   }
 
@@ -60,7 +73,8 @@ export class MidaHttpService {
           securedOptions as any
         )
       ),
-      map((httpEvent: any) => httpEvent)
+      map((httpEvent: any) => httpEvent),
+      catchError(this.handleError)
     );
   }
 

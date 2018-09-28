@@ -8,6 +8,7 @@ import { GestionOrganizacionalRoutingModule } from './gestion-organizacional-rou
 import { ActivityDashboardComponent } from './activity-dashboard/activity-dashboard.component';
 import { CreateActivityComponent } from './create-activity/create-activity.component';
 import { ActivityFormComponent } from './activity-form/activity-form.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ActivityFormComponent } from './activity-form/activity-form.component';
   declarations: [
     ActivityDashboardComponent,
     CreateActivityComponent,
-    ActivityFormComponent
+    ActivityFormComponent,
+    FormComponent
   ],
   exports: []
 })
