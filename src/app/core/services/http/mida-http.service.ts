@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpResponse } from '@angular/common/http';
 import { HttpOptions } from './http-options.model';
 import { switchMap, map, catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { Router } from '@angular/router';
 
@@ -34,7 +34,7 @@ export class MidaHttpService {
       //
       this.router.navigate(['/login']);
     }
-    return Observable.throw(error);
+    return throwError(error);
   }
 
   post<T>(url: string, body, options?: HttpOptions): Observable<T> {
