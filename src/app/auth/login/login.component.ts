@@ -2,7 +2,7 @@ import { AuthenticationService } from './../../core/services/auth/authentication
 import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,12 +24,21 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-
   wrongCredentials = false;
 
-  constructor(private router: Router, private authService: AuthenticationService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthenticationService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const token = this.route.snapshot.queryParams.loginToken;
+    if (token) {
+      this.authService.setOAuthToken(token);
+      this.router.navigate([this.route.snapshot.queryParams.route]);
+    }
+  }
 
   alert(message: string) {
     alert(message);
@@ -37,8 +46,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loginForm.get('username');
-    this.authService.login(this.loginForm.value)
-    .subscribe(() => {
+    this.authService.login(this.loginForm.value).subscribe(() => {
       this.wrongCredentials = false;
       this.router.navigate(['/organizacional']);
     });

@@ -21,7 +21,7 @@ export class AuthenticationService {
     return this.storage.getRaw('authentication-token');
   }
 
-  private setOAuthToken(token: string) {
+  setOAuthToken(token: string) {
     return this.storage.set('authentication-token', token);
   }
 }
