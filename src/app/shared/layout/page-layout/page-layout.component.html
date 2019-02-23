@@ -1,49 +1,26 @@
-<header class="navbar-header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <app-company-logo></app-company-logo>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
-      <ul class="navbar-nav align-items-center">
-        <li class="nav-item module-name">
-          {{moduleName}}
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <div class="nav-box">
-              <label for="usernameNav">Usuario:</label><br>
-              <b id="usernameNav">TMENDEZ</b>
-            </div>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <div class="nav-box">
-              <label for="usernameNav">Compañía:</label><br>
-              <b id="usernameNav">COMERCIA</b>
-            </div>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <div class="nav-box">
-              <label for="usernameNav">Emp. Elegido:</label><br>
-              <b id="usernameNav">E003 - TITO MENDEZ</b>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="main-menu-sidenav dark-theme">
 
-</header>
-<main class="container-fluid main-container">
-  <ng-content></ng-content>
-</main>
-<footer class="footer">
-  <app-footer></app-footer>
-</footer>
+    <!-- <a class="navbar-brand" href="#">
+        <app-company-logo></app-company-logo>
+      </a> -->
+    <app-main-menu></app-main-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <header class="header">
+      <app-header></app-header>
+    </header>
+
+    <main class="container-fluid main-container">
+      <ng-content></ng-content>
+    </main>
+    <footer class="footer">
+      <app-footer></app-footer>
+    </footer>
+
+  </mat-sidenav-content>
+
+
+
+</mat-sidenav-container>

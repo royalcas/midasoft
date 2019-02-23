@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  .item-button {
+    font-size: .8rem;
+    padding: 3px 5px;
+    min-width: 0;
+
+  }
+
+  .separator {
+    display: inline-block;
+    margin: .3rem;
+  }
+}

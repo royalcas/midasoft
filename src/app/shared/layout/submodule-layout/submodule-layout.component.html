@@ -1,11 +1,7 @@
 <app-page-layout [moduleName]="moduleName">
-  <div class="submodule-bar row">
-    <div class="col">
-      <a mat-button routerLink="/" aria-label="Back to Home">
-        <fa-icon [icon]="faHome"></fa-icon>
-      </a>
-      <app-current-time></app-current-time>
-    </div>
+  <div class="sub-header">
+    <app-breadcrumbs></app-breadcrumbs>
+    <app-current-time></app-current-time>
   </div>
   <ng-content></ng-content>
 </app-page-layout>

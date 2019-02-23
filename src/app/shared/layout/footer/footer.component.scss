@@ -1,5 +1,11 @@
-.col {
-  width: 50%;
-  padding: 20px;
-  display: inline-block;
+@import 'palette';
+
+:host {
+  text-align: center;
+  color: map-get($map: $md-midaprimary, $key: 400);
+
+  p {
+    font-size: .8rem;
+    margin-bottom: 0;
+  }
 }

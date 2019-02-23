@@ -1,3 +1,5 @@
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { HeaderComponent } from './header/header.component';
 import { CurrentTimeComponent } from './current-time/current-time.component';
 import { BootstrapModule } from './../ngb.module';
 import { ColorConventionsComponent } from './panel/color-conventions/color-conventions.component';
@@ -35,7 +37,9 @@ const components = [
   ConventionsModalComponent,
   ColorConventionsComponent,
   SubmoduleLayoutComponent,
-  CurrentTimeComponent
+  CurrentTimeComponent,
+  HeaderComponent,
+  BreadcrumbsComponent
 ];
 
 @NgModule({

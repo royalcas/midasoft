@@ -1,0 +1,21 @@
+<div class="logo">
+
+  <a class="header-brand" href="#">
+    <app-company-logo></app-company-logo>
+  </a>
+</div>
+<div class="search-box">
+  <input type="text" id="pageLookup" placeholder="Ir a la página">
+</div>
+
+<div class="user-menu-container" dir="rtl">
+  <button mat-button [matMenuTriggerFor]="menu" class="user-menu">
+    <div class="username">jamesv</div>
+    <div class="empleado">1073321014 - JAMES VERGARA</div>
+    <div class="compania">EMPLEAMOS</div>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+  </mat-menu>
+</div>
