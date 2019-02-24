@@ -1,0 +1,9 @@
+<app-submodule-layout>
+  <h1 *ngIf="!currentItem">Main Menu</h1>
+  <h1 *ngIf="currentItem">
+    <button mat-icon-button color="primary" (click)="goToMenuItem(currentItem.ParentId)">
+      <mat-icon aria-label="Atrás">arrow_back</mat-icon>
+    </button>{{currentItem.Name}}</h1>
+
+  <app-menu [parentId]="id$ | async" (select)="goToMenuItem($event)"></app-menu>
+</app-submodule-layout>

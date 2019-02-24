@@ -1,0 +1,28 @@
+:host {
+  .root-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    >.menu-item {
+      flex-grow: 1;
+      width: 33.33%;
+    }
+  }
+
+  .menu-container {
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 1rem;
+
+    app-menu-item {
+      width: 100%;
+    }
+
+    ::ng-deep {
+      .menu-level-1>app-menu-item .mat-button {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

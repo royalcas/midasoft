@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { InternalLayoutOutletComponent } from './internal-layout-outlet/internal-layout-outlet.component';
+import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GestionOrganizacionalComponent,
-    InternalLayoutOutletComponent
+    InternalLayoutOutletComponent,
+    MenuPageComponent
   ],
   imports: [
     BrowserModule,

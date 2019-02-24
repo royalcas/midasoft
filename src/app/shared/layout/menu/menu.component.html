@@ -1,0 +1,8 @@
+<ul class="menu-container" [class.root-menu-container]="level === 1">
+  <li *ngFor="let item of menuItems" class="menu-item" [ngClass]="levelClass">
+    <app-menu-item [item]="item" (select)="selectItem($event)"></app-menu-item>
+    <div *ngIf="level <= maxLevel" class="sub-menu-container">
+      <app-menu [parentId]="item.Id" [level]="level+1" (select)="selectItem($event)"></app-menu>
+    </div>
+  </li>
+</ul>

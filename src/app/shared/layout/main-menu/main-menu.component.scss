@@ -10,6 +10,7 @@
   .menu-item-container {
     list-style: none;
     width: 100%;
+    display: flex;
 
     &.active .menu-item-link {
       background: map-get($map: $md-midaprimary, $key: 900);
@@ -30,6 +31,10 @@
         width: 1.5rem;
         height: 1.5rem;
       }
+    }
+
+    .menu-item-text {
+      display: none;
     }
   }
 }

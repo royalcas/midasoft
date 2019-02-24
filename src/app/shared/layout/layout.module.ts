@@ -1,3 +1,4 @@
+import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from './header/header.component';
 import { CurrentTimeComponent } from './current-time/current-time.component';
@@ -21,6 +22,7 @@ import { MaterialModule } from '../material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SubmoduleLayoutComponent } from './submodule-layout/submodule-layout.component';
 import { RouterModule } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
 
 const components = [
   PageLayoutComponent,
@@ -39,7 +41,9 @@ const components = [
   SubmoduleLayoutComponent,
   CurrentTimeComponent,
   HeaderComponent,
-  BreadcrumbsComponent
+  BreadcrumbsComponent,
+  MenuComponent,
+  MenuItemComponent
 ];
 
 @NgModule({
