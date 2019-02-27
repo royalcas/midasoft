@@ -22,4 +22,8 @@ export class MainMenuComponent implements OnInit {
   goToItem(menuItem: MenuItemRaw) {
     this.menu.goToItem(menuItem);
   }
+
+  getMenuIcon(menuItem: MenuItemRaw) {
+    return this.menu.getMenuIcon(menuItem);
+  }
 }

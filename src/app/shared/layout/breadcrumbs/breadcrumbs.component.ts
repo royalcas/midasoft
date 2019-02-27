@@ -21,6 +21,10 @@ export class BreadcrumbsComponent implements OnInit {
     this.breadcrumbs$ = this.breadcrumbsService.getBreadcrumbs();
   }
 
+  goHome() {
+    this.menuService.goHome();
+  }
+
   goToItem(item: MenuItemRaw) {
     this.menuService.goToItem(item);
   }

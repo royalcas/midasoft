@@ -1,0 +1,49 @@
+.number-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-input-element {
+  border: none;
+  background: none;
+  padding: 0 10px;
+  outline: none;
+  font: inherit;
+  text-align: center;
+  min-width: 50px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+  }
+}
+
+::ng-deep {
+  .number-input-button {
+    height: 2rem;
+    width: 2rem;
+
+    .mat-button-wrapper {
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .mat-icon {
+        width: 1rem;
+        height: 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}

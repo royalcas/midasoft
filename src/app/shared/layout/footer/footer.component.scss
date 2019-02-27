@@ -3,6 +3,9 @@
 :host {
   text-align: center;
   color: map-get($map: $md-midaprimary, $key: 400);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 
   p {
     font-size: .8rem;

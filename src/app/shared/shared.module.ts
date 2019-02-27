@@ -7,12 +7,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BootstrapModule } from './ngb.module';
 import { LongDatePipe } from './pipes/datetime/long-date.pipe';
 import { ShortDatePipe } from './pipes/datetime/short-date.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoadingComponent } from './components/loading/loading.component';
+import { NumberFieldComponent } from './components/fields/number-field/number-field.component';
 
 const pipes = [LongDatePipe, ShortDatePipe];
-const components = [LoadingComponent];
+const components = [LoadingComponent, NumberFieldComponent];
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ const components = [LoadingComponent];
     ErrorModule,
     LayoutModule,
     FontAwesomeModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule
   ],
@@ -32,6 +34,7 @@ const components = [LoadingComponent];
     ErrorModule,
     LayoutModule,
     FontAwesomeModule,
+    FormsModule,
     ReactiveFormsModule,
     ...pipes,
     ...components

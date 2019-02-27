@@ -5,6 +5,7 @@ import { menuItems } from '../../data/menu-items.raw';
 import { find } from 'rxjs/operators';
 import { of, BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { menuIconDefinition } from '../../data/menu-icon-definition.cons';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +47,18 @@ export class MenuService {
 
   goToItem(menuItem: MenuItemRaw) {
     this.router.navigate(['/menu', menuItem.Id]);
+  }
+
+  goHome() {
+    this.router.navigate(['/menu', 0]);
+  }
+
+  getMenuIcon(menuItem: MenuItemRaw): string {
+    const ico = menuIconDefinition.find(def => def.id === menuItem.Id);
+
+    if (!ico) {
+      return 'gesture';
+    }
+    return ico.icon;
   }
 }

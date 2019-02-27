@@ -5,9 +5,15 @@
         <mat-icon>menu</mat-icon>
       </a>
     </li>
+    <mat-divider></mat-divider>
+    <li class="menu-item-container">
+      <a href="#" class="menu-item-link" matTooltip="Favoritos">
+        <mat-icon>star</mat-icon>
+      </a>
+    </li>
     <li *ngFor="let menuItem of menuItems" class="menu-item-container">
       <a class="menu-item-link" [matTooltip]="menuItem.Name" matTooltipPosition="right" (click)="goToItem(menuItem)">
-        <mat-icon>home</mat-icon>
+        <mat-icon>{{getMenuIcon(menuItem)}}</mat-icon>
       </a>
       <div class="menu-item-text">{{menuItem.Name}}</div>
     </li>

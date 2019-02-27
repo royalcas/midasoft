@@ -1,9 +1,9 @@
-<button mat-icon-button class="breadcrumb-item-button">
+<button mat-icon-button class="breadcrumb-item-button" (click)="goHome()">
   <mat-icon>home</mat-icon>
 </button>
 <div *ngFor="let item of (breadcrumbs$ | async)" class="breadcrumb-section">
   <div class="breadcrumb-separator">·</div>
-  <button mat-button class="breadcrumb-item-button" (click)="goToItem(item)">
+  <button mat-flat-button color="default" class="breadcrumb-item-button" (click)="goToItem(item)">
     {{item.Name}}
   </button>
 </div>
