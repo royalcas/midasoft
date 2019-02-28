@@ -1,3 +1,7 @@
+import { LookupBoxComponent } from './components/lookup-box/lookup-box.component';
+import { ListSelectAllComponent } from './components/list-select-all/list-select-all.component';
+import { ListModalSelectorComponent } from './components/list-modal-selector/list-modal-selector.component';
+import { ListModalSelectorButtonComponent } from './components/list-modal-selector/list-modal-selector-button/list-modal-selector-button.component';
 import { LayoutModule } from './layout/layout.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +17,14 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { NumberFieldComponent } from './components/fields/number-field/number-field.component';
 
 const pipes = [LongDatePipe, ShortDatePipe];
-const components = [LoadingComponent, NumberFieldComponent];
+const components = [
+  LoadingComponent,
+  NumberFieldComponent,
+  ListModalSelectorButtonComponent,
+  ListModalSelectorComponent,
+  ListSelectAllComponent,
+  LookupBoxComponent
+];
 
 @NgModule({
   imports: [
@@ -38,6 +49,7 @@ const components = [LoadingComponent, NumberFieldComponent];
     ReactiveFormsModule,
     ...pipes,
     ...components
-  ]
+  ],
+  entryComponents: [ListModalSelectorComponent]
 })
 export class SharedModule {}

@@ -1,6 +1,7 @@
 import { MenuService } from './../../../core/services/common/menu.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MenuItemRaw } from 'src/app/core/models/menu-item-raw.model';
+import { expand } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-menu',
@@ -9,7 +10,10 @@ import { MenuItemRaw } from 'src/app/core/models/menu-item-raw.model';
 })
 export class MainMenuComponent implements OnInit {
   @Input()
-  moduleName: string;
+  expanded = false;
+
+  @Output()
+  sideNavExpanded = new EventEmitter<boolean>();
 
   menuItems: MenuItemRaw[];
 
@@ -25,5 +29,10 @@ export class MainMenuComponent implements OnInit {
 
   getMenuIcon(menuItem: MenuItemRaw) {
     return this.menu.getMenuIcon(menuItem);
+  }
+
+  toogleMenu() {
+    this.expanded = !this.expanded;
+    this.sideNavExpanded.emit(this.expanded);
   }
 }

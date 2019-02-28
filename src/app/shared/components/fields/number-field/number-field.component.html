@@ -1,10 +1,10 @@
 <div class="number-input-container">
-  <button mat-fab color="primary" class="number-input-button" [disabled]="minLimitReached" (click)="decrease()">
+  <button mat-fab color="default" class="number-input-button" [disabled]="minLimitReached" (click)="decrease()">
     <mat-icon>remove</mat-icon>
   </button>
   <input #input class="number-input-element" type="number" [step]="step" [max]="max" [min]="min" [size]="size"
     [formControl]="control">
-  <button mat-fab color="primary" class="number-input-button" [disabled]="maxLimitReached" (click)="increase()">
+  <button mat-fab color="default" class="number-input-button" [disabled]="maxLimitReached" (click)="increase()">
     <mat-icon>add</mat-icon>
   </button>
 </div>

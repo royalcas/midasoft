@@ -25,6 +25,7 @@ import { MatFormFieldControl } from '@angular/material';
 })
 export class NumberFieldComponent
   implements MatFormFieldControl<number>, OnDestroy {
+  static nextId = 0;
   control: FormControl;
   stateChanges = new Subject<void>();
   focused = false;

@@ -40,3 +40,14 @@ h1 {
   display: flex;
   align-items: center;
 }
+
+.form-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+
+  &>button,
+  a {
+    margin-left: 10px;
+  }
+}

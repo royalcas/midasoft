@@ -1,10 +1,14 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" opened class="main-menu-sidenav dark-theme">
-    <app-main-menu></app-main-menu>
+  <mat-sidenav #sidenav [mode]="expanded || !sidenavOpened ? 'over' : 'side'" [opened]="sidenavOpened" class="main-menu-sidenav dark-theme"
+    [class.main-menu-expanded]="expanded" [disableClose]="sidenavOpened">
+    <app-main-menu (sideNavExpanded)="changeExpand($event)" [expanded]="!sidenavOpened"></app-main-menu>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <header class="header">
+      <button mat-icon-button *ngIf="!sidenavOpened" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
       <app-header></app-header>
     </header>
 

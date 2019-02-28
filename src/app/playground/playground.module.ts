@@ -7,9 +7,10 @@ import { DemoDashboardComponent } from './demo-dashboard/demo-dashboard.componen
 import { PlaygroundRoutingModule } from './playground-routing.module';
 import { DemoFormComponent } from './demo-form/demo-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DemoIndexComponent } from './demo-index/demo-index.component';
 
 @NgModule({
-  declarations: [MenuComponent, DemoDashboardComponent, DemoFormComponent],
+  declarations: [MenuComponent, DemoDashboardComponent, DemoFormComponent, DemoIndexComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -36,10 +36,49 @@
         width: 1.5rem;
         height: 1.5rem;
       }
+
+      .menu-item-text {
+        display: none;
+      }
     }
 
-    .menu-item-text {
-      display: none;
+
+  }
+}
+
+.sidenav-expanded {
+  max-width: 100%;
+
+
+
+  .menu-items {
+    ::ng-deep {
+      .menu-item-container {
+        .menu-item-link {
+          .mat-button-wrapper {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .menu-item-container {
+      .menu-item-link {
+        width: 100%;
+
+        .mat-button-wrapper {
+          display: flex;
+        }
+
+        .mat-icon {
+          margin-right: 8px;
+        }
+
+        .menu-item-text {
+          display: flex;
+        }
+      }
     }
   }
 }

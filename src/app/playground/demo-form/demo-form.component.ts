@@ -1,3 +1,4 @@
+import { centrosCosto } from './ccosto.data';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./demo-form.component.scss']
 })
 export class DemoFormComponent implements OnInit {
+  ccostos = centrosCosto;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -1,3 +1,23 @@
-<p>
-  list-modal-selector works!
-</p>
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+  <div class="lookup-field-container">
+    <app-lookup-box (changed)="filter($event)"></app-lookup-box>
+  </div>
+  <div *ngIf="itemSelection.selectedOptions.selected.length" class="selected-items-indicator">
+    {{itemSelection.selectedOptions.selected.length}} Seleccionados
+  </div>
+  <div class="multiple-selection-actions">
+    <app-list-select-all [totalItems]="data.items.length" [selectedItems]="itemSelection.selectedOptions.selected.length"
+      (selectAll)="selectAll()" (deselectAll)="deselectAll()"></app-list-select-all>
+  </div>
+  <mat-selection-list #itemSelection [compareWith]="compare" class="list-results-container" [class.row]="data.columns">
+    <mat-list-option *ngFor="let item of filteredData" class="list-item" [class.col-md-4]="data.columns" [value]="item"
+      [selected]="isSelected(item)" checkboxPosition="before">
+      {{item.description}}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>CANCELAR</button>
+  <button mat-raised-button [mat-dialog-close]="itemSelection.selectedOptions.selected" cdkFocusInitial color="primary">SELECCIONAR</button>
+</div>

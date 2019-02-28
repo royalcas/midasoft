@@ -1,0 +1,7 @@
+<mat-form-field>
+  <input matInput [placeholder]="label" [(ngModel)]="value" (keyup)="criteriaChanged($event)">
+  <mat-icon matPrefix>search</mat-icon>
+  <button *ngIf="value" mat-icon-button aria-label="Limpiar Busqueda" matSuffix (click)="clear()">
+    <mat-icon matPrefix aria-hidden="">clear</mat-icon>
+  </button>
+</mat-form-field>

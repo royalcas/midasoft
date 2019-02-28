@@ -1,0 +1,21 @@
+.list-item {
+  display: flex !important;
+}
+
+.row.mat-list-base {
+  display: flex;
+}
+
+::ng-deep {
+  .list-item {
+    .mat-list-item-content {
+      width: 100%;
+    }
+  }
+}
+
+.selected-items-indicator {
+  background: #fafafa;
+  text-align: center;
+  padding: 20px;
+}
