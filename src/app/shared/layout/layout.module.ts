@@ -1,7 +1,7 @@
+import { CurrentTimeComponent } from './current-time/current-time.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HeaderComponent } from './header/header.component';
-import { CurrentTimeComponent } from './current-time/current-time.component';
 import { BootstrapModule } from './../ngb.module';
 import { ColorConventionsComponent } from './panel/color-conventions/color-conventions.component';
 import { ConventionsModalComponent } from './panel/color-conventions/conventions-modal/conventions-modal.component';
@@ -39,11 +39,11 @@ const components = [
   ConventionsModalComponent,
   ColorConventionsComponent,
   SubmoduleLayoutComponent,
-  CurrentTimeComponent,
   HeaderComponent,
   BreadcrumbsComponent,
   MenuComponent,
-  MenuItemComponent
+  MenuItemComponent,
+  CurrentTimeComponent
 ];
 
 @NgModule({

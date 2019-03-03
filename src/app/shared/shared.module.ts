@@ -15,6 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoadingComponent } from './components/loading/loading.component';
 import { NumberFieldComponent } from './components/fields/number-field/number-field.component';
+import { MenuTitleComponent } from './layout/menu-title/menu-title.component';
 
 const pipes = [LongDatePipe, ShortDatePipe];
 const components = [
@@ -23,7 +24,8 @@ const components = [
   ListModalSelectorButtonComponent,
   ListModalSelectorComponent,
   ListSelectAllComponent,
-  LookupBoxComponent
+  LookupBoxComponent,
+  MenuTitleComponent
 ];
 
 @NgModule({

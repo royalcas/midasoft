@@ -1,3 +1,4 @@
+import { EmbedClassicComponent } from './pages/embed-classic/embed-classic.component';
 import { PlaygroundModule } from './playground/playground.module';
 import { SubmoduleLayoutComponent } from './shared/layout/submodule-layout/submodule-layout.component';
 import { LogoutComponent } from './auth/logout/logout.component';
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'menu/:id', component: MenuPageComponent },
+  { path: 'vista-clasica/:id', component: EmbedClassicComponent },
   {
     path: 'organizacional',
     loadChildren: () => GestionOrganizacionalModule,

@@ -21,7 +21,7 @@ export class BreadcrumbService {
       return [];
     }
 
-    const item = this.menuService.getItemFromId(itemId);
+    const item = this.menuService.getItemById(itemId);
 
     if (this.menuService.isRootItem(item)) {
       return [item];

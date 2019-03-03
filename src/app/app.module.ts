@@ -11,13 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { InternalLayoutOutletComponent } from './internal-layout-outlet/internal-layout-outlet.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
+import { EmbedClassicComponent } from './pages/embed-classic/embed-classic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GestionOrganizacionalComponent,
     InternalLayoutOutletComponent,
-    MenuPageComponent
+    MenuPageComponent,
+    EmbedClassicComponent
   ],
   imports: [
     BrowserModule,

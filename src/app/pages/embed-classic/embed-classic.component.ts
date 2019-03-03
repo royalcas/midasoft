@@ -1,33 +1,46 @@
 import { MenuItemRaw } from './../../core/models/menu-item-raw.model';
 import { menuItems } from './../../core/data/menu-items.raw';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/core/services/common/menu.service';
-import { map, tap, takeUntil } from 'rxjs/operators';
+import { map, tap, takeUntil, filter } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-menu-page',
-  templateUrl: './menu-page.component.html',
-  styleUrls: ['./menu-page.component.scss']
+  selector: 'app-embed-classic',
+  templateUrl: './embed-classic.component.html',
+  styleUrls: ['./embed-classic.component.scss']
 })
-export class MenuPageComponent implements OnInit, OnDestroy {
+export class EmbedClassicComponent implements OnInit, OnDestroy {
   id$: Observable<number>;
   currentItem: MenuItemRaw;
   destroy$ = new Subject();
+  embedUrl$: Observable<SafeUrl>;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private sanitizer: DomSanitizer,
     private menuService: MenuService
   ) {}
 
   ngOnInit() {
+    this.setActiveMenuItem(+this.route.snapshot.params.id);
     this.id$ = this.route.params.pipe(
       map(params => +params.id),
       tap(selectedItemId => this.setActiveMenuItem(selectedItemId)),
       takeUntil(this.destroy$)
     );
+
+    this.embedUrl$ = this.menuService
+      .getActualItemUrl()
+
+      .pipe(
+        filter(url => !!url),
+        map(url => this.sanitizer.bypassSecurityTrustResourceUrl(url)),
+        takeUntil(this.destroy$)
+      );
   }
 
   ngOnDestroy() {
@@ -44,6 +57,6 @@ export class MenuPageComponent implements OnInit, OnDestroy {
       id = 0;
     }
 
-    this.menuService.goToItemById(id);
+    this.router.navigate(['/menu', id]);
   }
 }
