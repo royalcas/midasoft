@@ -22,5 +22,6 @@ export class StorageService {
 
   set(inputName, value: any) {
     localStorage.setItem(inputName, value);
+    return of(value);
   }
 }

@@ -1,3 +1,4 @@
+import { FavoritesService } from './../../../core/services/common/favorites.service';
 import { MenuService } from './../../../core/services/common/menu.service';
 import { MenuItemRaw } from './../../../core/models/menu-item-raw.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -9,7 +10,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MenuTitleComponent implements OnInit {
   @Input() item: MenuItemRaw;
-  constructor(private menuService: MenuService) {}
+  inFavorites = false;
+
+  constructor(
+    private menuService: MenuService,
+    private favoritesService: FavoritesService
+  ) {}
 
   ngOnInit() {}
 
@@ -19,5 +25,15 @@ export class MenuTitleComponent implements OnInit {
     }
 
     this.menuService.goToItemById(id);
+  }
+
+  changeFavorites() {
+    if (this.inFavorites) {
+      this.favoritesService.add(this.item);
+    } else {
+      this.favoritesService.remove(this.item);
+    }
+
+    this.inFavorites = !this.inFavorites;
   }
 }

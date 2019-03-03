@@ -3,11 +3,11 @@
   <button mat-icon-button color="primary" (click)="goToMenuItem(item.ParentId)">
     <mat-icon aria-label="Atrás">arrow_back</mat-icon>
   </button>{{item.Name}}
-  <button mat-icon-button color="accent" class="favorites-button" (click)="favorites = !favorites" [matTooltip]="favorites ? 'Eliminar de Favoritos' : 'Agregar a Favoritos'">
-    <ng-container *ngIf="favorites">
+  <button mat-icon-button color="accent" class="favorites-button" (click)="changeFavorites()" [matTooltip]="inFavorites ? 'Eliminar de Favoritos' : 'Agregar a Favoritos'">
+    <ng-container *ngIf="inFavorites">
       <mat-icon>star</mat-icon>
     </ng-container>
-    <ng-container *ngIf="!favorites">
+    <ng-container *ngIf="!inFavorites">
       <mat-icon>star_border</mat-icon>
     </ng-container>
   </button>

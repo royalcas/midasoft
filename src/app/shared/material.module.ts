@@ -45,7 +45,8 @@ const MatModules = [
   MatDividerModule,
   MatListModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatAutocompleteModule
 ];
 
 @NgModule({
