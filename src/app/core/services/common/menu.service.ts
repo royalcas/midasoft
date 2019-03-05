@@ -4,7 +4,7 @@ import { MenuItemRaw } from './../../models/menu-item-raw.model';
 import { Injectable } from '@angular/core';
 import { menuItems } from '../../data/menu-items.raw';
 import { map } from 'rxjs/operators';
-import { of, BehaviorSubject } from 'rxjs';
+import { of, BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { menuIconDefinition } from '../../data/menu-icon-definition.cons';
 
@@ -48,6 +48,10 @@ export class MenuService {
 
   getMenuItemFromRaw(menuItem: MenuItemRaw): MenuItem {
     return { ...menuItem, children: [] } as MenuItem;
+  }
+
+  getAll(): Observable<MenuItemRaw[]> {
+    return of(menuItems);
   }
 
   getMainMenu() {

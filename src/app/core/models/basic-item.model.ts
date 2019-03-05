@@ -1,4 +1,5 @@
 export interface BasicItem {
   id: number;
-  description: string;
+  name?: string;
+  description?: string;
 }

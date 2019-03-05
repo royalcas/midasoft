@@ -10,9 +10,14 @@
     >.menu-item {
 
       flex-grow: 1;
-      width: 33.33%;
+      width: 100%;
       margin-bottom: 2rem;
       border-left: 2px solid map-get($md-midaprimary, 200);
+
+      @media (min-width: 500px) {
+
+        width: 33%;
+      }
 
     }
   }

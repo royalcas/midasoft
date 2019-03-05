@@ -57,3 +57,21 @@ a {
 .mat-dialog-actions {
   justify-content: flex-end;
 }
+
+
+.mat-card {
+  .mat-card-title {
+    font-size: 1.2rem;
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .mat-card-expaded {
+    margin: {
+      left: -16px;
+      right: -16px;
+    }
+  }
+}

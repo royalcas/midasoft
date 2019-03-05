@@ -33,6 +33,17 @@
   .user-menu-container {
     display: flex;
 
+    .user-info {
+      display: none;
+
+      @media (min-width: 900px) {
+
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+
     .user-menu-toogle {
       padding: 7px 16px;
     }

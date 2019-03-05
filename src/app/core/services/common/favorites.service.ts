@@ -3,13 +3,17 @@ import { StorageService } from './storage.service';
 import { MenuItemRaw } from '../../models/menu-item-raw.model';
 import { map, mergeMap, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { MenuService } from './menu.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritesService {
   private readonly storageInput = 'favorites-list-db';
-  constructor(private storageService: StorageService) {}
+  constructor(
+    private storageService: StorageService,
+    private menuService: MenuService
+  ) {}
 
   getAll(): Observable<MenuItemRaw[]> {
     return this.storageService

@@ -1,0 +1,11 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" class="lookup-input" placeholder="Ir a la página..." aria-label="Number" matInput [formControl]="lookupControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="goToOption($event)">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        <mat-icon *ngIf="!lookupControl.value">star</mat-icon> {{option.name}} <span class="menu-parent">{{option.description}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavLookupComponent } from './header/nav-lookup/nav-lookup.component';
 import { CurrentTimeComponent } from './current-time/current-time.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
@@ -43,7 +45,8 @@ const components = [
   BreadcrumbsComponent,
   MenuComponent,
   MenuItemComponent,
-  CurrentTimeComponent
+  CurrentTimeComponent,
+  NavLookupComponent
 ];
 
 @NgModule({
@@ -52,6 +55,8 @@ const components = [
     MaterialModule,
     BootstrapModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule
   ],
   declarations: components,
