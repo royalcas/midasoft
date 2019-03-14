@@ -36,6 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/Midasoft2018/NGMidasoft/",
             "outputPath": "dist/midasoft",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -43,7 +44,8 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config"
             ],
             "styles": [
               "src/app/styles/midasoft.material.scss",
@@ -56,6 +58,32 @@
             },
             "scripts": []
           },
+          "watch": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "baseHref": "/Midasoft2018/NGMidasoft/",
+              "watch": true,
+              "outputPath": "dist/midasoft",
+              "index": "src/index.html",
+              "main": "src/main.ts",
+              "polyfills": "src/polyfills.ts",
+              "tsConfig": "src/tsconfig.app.json",
+              "assets": [
+                "src/favicon.ico",
+                "src/assets",
+                "src/web.config"
+              ],
+              "styles": [
+                "src/app/styles/midasoft.material.scss",
+                "src/styles.scss"
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/app/styles/partials"
+                ]
+              },
+              "scripts": []
+            },
           "configurations": {
             "production": {
               "fileReplacements": [{

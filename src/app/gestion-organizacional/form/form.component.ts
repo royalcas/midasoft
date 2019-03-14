@@ -30,6 +30,10 @@ export class FormComponent implements OnInit {
       this.fb.group({
         name: ['', Validators.required],
         value: ['', Validators.required]
+      }),
+      this.fb.group({
+        name: ['', Validators.required],
+        value: ['', Validators.required]
       })
     ])
   });
