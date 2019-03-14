@@ -1,0 +1,6 @@
+<app-submodule-layout>
+  <app-menu-title [item]="currentItem"></app-menu-title>
+
+  <app-menu [parentId]="id$ | async" (select)="goToMenuItem($event)"></app-menu>
+
+</app-submodule-layout>

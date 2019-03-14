@@ -1,0 +1,41 @@
+@import 'palette';
+@import '~bootstrap/scss/mixins/breakpoints';
+
+:host {
+  .root-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    >.menu-item {
+
+      flex-grow: 1;
+      width: 100%;
+      margin-bottom: 2rem;
+      border-left: 2px solid map-get($md-midaprimary, 200);
+
+      @media (min-width: 500px) {
+
+        width: 33%;
+      }
+
+    }
+  }
+
+  .menu-container {
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 1rem;
+
+    app-menu-item {
+      width: 100%;
+    }
+
+    ::ng-deep {
+      .menu-level-1>app-menu-item .mat-button {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

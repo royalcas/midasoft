@@ -1,3 +1,4 @@
+import { LongDatePipe } from './../../pipes/datetime/long-date.pipe';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./current-time.component.scss']
 })
 export class CurrentTimeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  currentDate = new Date();
+  pipe: LongDatePipe;
+  constructor() {
+    this.pipe = new LongDatePipe();
   }
 
+  ngOnInit() {}
+
+  get currentTimeText() {
+    return this.pipe.transform(this.currentDate);
+  }
 }

@@ -1,0 +1,10 @@
+<button mat-raised-button (click)="showSelectionModal()" [disabled]="selecting">
+  <ng-container *ngIf="selectedItems?.length; else noSelectionYet">{{selectedLabel}} ({{selectedItems?.length}})</ng-container>
+
+  <ng-template #noSelectionYet>
+    <ng-container *ngIf="items?.length; else noElementsInput">{{selectLabel}}</ng-container>
+    <ng-template #noElementsInput>
+      {{emptyLabel}}
+    </ng-template>
+  </ng-template>
+</button>

@@ -1,0 +1,9 @@
+<app-submodule-layout>
+
+  <app-menu-title [item]="currentItem"></app-menu-title>
+  <div *ngIf="(embedUrl$ | async) as iframeUrl" class="md-classic-ui row">
+    <app-loading class="loader"></app-loading>
+    <iframe #pageContainer class="md-classic-ui-container" [src]="iframeUrl" frameborder="0" width="100%">
+    </iframe>
+  </div>
+</app-submodule-layout>

@@ -1,0 +1,13 @@
+.md-classic-ui-container {
+  width: 100%;
+  height: calc(80vh - 8rem);
+  z-index: 1;
+}
+
+.md-classic-ui {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+}

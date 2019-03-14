@@ -1,0 +1,29 @@
+@import 'palette';
+
+.menu-parent {
+  color: map-get($md-midaprimary, 200);
+  font-style: italic;
+  margin-left: 5px;
+  font-size: .8rem;
+}
+
+.mat-icon {
+  color: map-get($md-midaprimary, 200);
+}
+
+.lookup-input {
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+
+::ng-deep {
+  app-nav-lookup {
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-label {
+      font-family: 'Encode Sans Condensed', sans-serif;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import 'palette';
+
+#pageLookup {
+  border: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.soft-logo {
+  margin-left: 2rem;
+}
+
+:host {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  >div {
+    flex-basis: 0;
+    max-width: 100%;
+
+    &.search-box {
+      flex-grow: 1;
+      padding: 0 3rem;
+    }
+  }
+
+  .header-brand {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  .user-menu-container {
+    display: flex;
+
+    .user-info {
+      display: none;
+
+      @media (min-width: 900px) {
+
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+
+    .user-menu-toogle {
+      padding: 7px 16px;
+    }
+
+    .logo {
+      margin-right: 5px;
+    }
+
+    ::ng-deep {
+      .user-menu-toogle .mat-button-wrapper {
+        text-align: left;
+        line-height: 1.3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-family: 'Encode Sans Condensed', sans-serif;
+
+        .username {
+          font-weight: bold;
+        }
+
+        .compania {
+          color: map-get($map: $md-midaprimary, $key: 300);
+        }
+
+        .toogle-icon {
+          padding: 5px;
+        }
+
+      }
+    }
+
+  }
+}

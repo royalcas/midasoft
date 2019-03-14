@@ -1,3 +1,23 @@
-<p>
-  main-menu works!
-</p>
+<nav [class.sidenav-expanded]="expanded">
+  <ul class="menu-items">
+    <li class="menu-item-container">
+      <button mat-button class="menu-item-link" (click)="toogleMenu()">
+        <mat-icon *ngIf="!expanded">menu</mat-icon>
+        <mat-icon *ngIf="expanded">arrow_back</mat-icon>
+      </button>
+    </li>
+    <mat-divider></mat-divider>
+    <li class="menu-item-container">
+      <a mat-button class="menu-item-link" href="#">
+        <mat-icon>star</mat-icon>
+        <div class="menu-item-text">Favoritos</div>
+      </a>
+    </li>
+    <li *ngFor="let menuItem of menuItems" class="menu-item-container">
+      <a mat-button class="menu-item-link" [matTooltip]="menuItem.Name" matTooltipPosition="right" (click)="goToItem(menuItem)">
+        <mat-icon>{{getMenuIcon(menuItem)}}</mat-icon>
+        <div class="menu-item-text">{{menuItem.Name}}</div>
+      </a>
+    </li>
+  </ul>
+</nav>

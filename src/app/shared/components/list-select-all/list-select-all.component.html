@@ -1,0 +1,6 @@
+<mat-checkbox class="select-multiple-option" [(ngModel)]="checked" [(indeterminate)]="indeterminate" (change)="triggerSelectionChange($event)">
+  <ng-container *ngIf="checked; else deselectAllTxt">Limpiar Selección</ng-container>
+  <ng-template #deselectAllTxt>
+    Seleccionar Todos
+  </ng-template>
+</mat-checkbox>

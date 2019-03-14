@@ -1,4 +1,9 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavLookupComponent } from './header/nav-lookup/nav-lookup.component';
 import { CurrentTimeComponent } from './current-time/current-time.component';
+import { MenuItemComponent } from './menu/menu-item/menu-item.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { HeaderComponent } from './header/header.component';
 import { BootstrapModule } from './../ngb.module';
 import { ColorConventionsComponent } from './panel/color-conventions/color-conventions.component';
 import { ConventionsModalComponent } from './panel/color-conventions/conventions-modal/conventions-modal.component';
@@ -19,6 +24,7 @@ import { MaterialModule } from '../material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SubmoduleLayoutComponent } from './submodule-layout/submodule-layout.component';
 import { RouterModule } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
 
 const components = [
   PageLayoutComponent,
@@ -35,7 +41,12 @@ const components = [
   ConventionsModalComponent,
   ColorConventionsComponent,
   SubmoduleLayoutComponent,
-  CurrentTimeComponent
+  HeaderComponent,
+  BreadcrumbsComponent,
+  MenuComponent,
+  MenuItemComponent,
+  CurrentTimeComponent,
+  NavLookupComponent
 ];
 
 @NgModule({
@@ -44,6 +55,8 @@ const components = [
     MaterialModule,
     BootstrapModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule
   ],
   declarations: components,

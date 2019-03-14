@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .breadcrumb-section {
+    display: flex;
+    align-items: center;
+
+    .breadcrumb-item-button {
+      font-size: .8rem;
+      padding: 3px 5px;
+      min-width: 0;
+    }
+
+    .breadcrumb-separator {
+      display: inline-block;
+      margin: .3rem;
+    }
+
+    .mat-flat-button {
+      border-radius: 18px;
+      padding: 0px 10px;
+    }
+
+  }
+}

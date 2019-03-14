@@ -1,0 +1,84 @@
+@import 'palette';
+
+.user-menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: stretch;
+  padding: 0px;
+
+  .menu-item-container {
+    list-style: none;
+    width: 100%;
+    display: flex;
+
+    &.active .menu-item-link {
+      background: map-get($map: $md-midaprimary, $key: 900);
+    }
+
+    .menu-item-link {
+      padding: 1rem;
+      display: flex;
+      color: map-get($map: $md-midaprimary, $key: 100);
+
+      &:hover {
+        text-decoration: none;
+        color: white;
+      }
+
+      .mat-icon {
+        font-size: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      .menu-item-text {
+        display: none;
+      }
+    }
+
+
+  }
+}
+
+.sidenav-expanded {
+  max-width: 100%;
+
+
+
+  .menu-items {
+    ::ng-deep {
+      .menu-item-container {
+        .menu-item-link {
+          .mat-button-wrapper {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .menu-item-container {
+      .menu-item-link {
+        width: 100%;
+
+        .mat-button-wrapper {
+          display: flex;
+        }
+
+        .mat-icon {
+          margin-right: 8px;
+        }
+
+        .menu-item-text {
+          display: flex;
+        }
+      }
+    }
+  }
+}

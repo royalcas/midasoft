@@ -1,3 +1,4 @@
+import { MenuService } from './../../core/services/common/menu.service';
 import { AuthenticationService } from './../../core/services/auth/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthenticationService,
+    private menuService: MenuService,
     private route: ActivatedRoute
   ) {}
 
@@ -45,10 +47,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginForm.get('username');
-    this.authService.login(this.loginForm.value).subscribe(() => {
-      this.wrongCredentials = false;
-      this.router.navigate(['/organizacional']);
-    });
+    // this.loginForm.get('username');
+    // this.authService.login(this.loginForm.value).subscribe(() => {
+    //   this.wrongCredentials = false;
+    //   this.router.navigate(['/organizacional']);
+    // });
+    this.menuService.goHome();
   }
 }

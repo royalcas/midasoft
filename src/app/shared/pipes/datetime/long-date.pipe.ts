@@ -6,6 +6,7 @@ import * as moment from 'moment';
 })
 export class LongDatePipe implements PipeTransform {
   transform(value: Date, args?: boolean): any {
-    return moment(value).format('MMMM DD YYYY, h:mm:ss a');
+    moment.locale('es');
+    return moment(value).format('LLLL');
   }
 }

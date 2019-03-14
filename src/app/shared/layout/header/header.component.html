@@ -1,0 +1,72 @@
+<div class="soft-logo">
+  <img src="./favicon.ico" alt="Midasoft" height="40" />
+</div>
+<div class="search-box">
+  <app-nav-lookup></app-nav-lookup>
+</div>
+
+<div class="user-menu-container">
+  <button mat-button [matMenuTriggerFor]="menu" class="user-menu-toogle">
+    <div class="logo">
+      <app-company-logo></app-company-logo>
+    </div>
+    <div class="user-info">
+      <div class="username">jamesv</div>
+      <div class="empleado">1073321014 - JAMES VERGARA</div>
+      <div class="compania">EMPLEAMOS</div>
+    </div>
+    <div class="toogle-icon">
+      <mat-icon>expand_more</mat-icon>
+    </div>
+  </button>
+</div>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>swap_horiz</mat-icon>
+    <span>Cambiar Compañía</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>supervised_user_circle</mat-icon>
+    <span>Seleccionar Empleado</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>clear</mat-icon>
+    <span>Limpiar Empleado</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>https</mat-icon>
+    <span>Cambiar Contraseña</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>verified_user</mat-icon>
+    <span>Seguridad</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>settings</mat-icon>
+    <span>Variables de Usuario</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Calculadora</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>today</mat-icon>
+    <span>Calendario</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>help</mat-icon>
+    <span>Helpdesk</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>code</mat-icon>
+    <span>Último Debug</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Cerrar Sesión</span>
+  </button>
+</mat-menu>

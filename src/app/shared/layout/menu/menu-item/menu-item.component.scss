@@ -1,0 +1,10 @@
+.mat-button {
+  width: 100%;
+  text-align: left;
+
+  ::ng-deep {
+    .mat-button-wrapper {
+      white-space: normal;
+    }
+  }
+}

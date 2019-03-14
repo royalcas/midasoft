@@ -48,7 +48,6 @@
               "src/web.config"
             ],
             "styles": [
-              "src/app/styles/midasoft.material.scss",
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
